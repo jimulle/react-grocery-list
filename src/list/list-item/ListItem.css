@@ -1,0 +1,8 @@
+.list-item {
+    list-style: none;
+}
+
+.list-item .quantity {
+    font-size: .75em;
+    color: gray;
+}
