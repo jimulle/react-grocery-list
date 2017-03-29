@@ -8,7 +8,7 @@ class ListItem extends Component {
   }
 
   handleItemCheckboxChange(event) {
-    this.props.onHandleItemCheckboxChange(this.props.item, event.target.checked);
+    this.props.onCheck(this.props.item);
   }
 
   render() {

@@ -8,12 +8,12 @@ class List extends Component {
     this.handleCheckboxChanged = this.handleCheckboxChanged.bind(this);
   }
 
-  handleCheckboxChanged(item, value) {
-    this.props.onHandleCheckboxChange(item, value);
+  handleCheckboxChanged(item) {
+    this.props.onCheck(item);
   }
 
   render() {
-    let listItems = this.props.groceries.map((item) => <ListItem item={ item } onHandleItemCheckboxChange={ this.handleCheckboxChanged } key={ item.name + item.quantity } />);
+    let listItems = this.props.groceries.map((item) => <ListItem item={ item } onCheck={ this.handleCheckboxChanged } key={ item.id } />);
     return (
         <ul className="list">
             { listItems }

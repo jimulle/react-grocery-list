@@ -7,10 +7,10 @@ export const addItem = (item) => {
     }
 };
 
-export const checkChanged = (item) => {
+export const check = (item) => {
     console.log('change item check: ', item);
     return {
-        type: 'changeCheck',
+        type: 'check',
         item
     }
 };

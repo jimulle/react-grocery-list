@@ -8,7 +8,7 @@ class Form extends Component {
         name: '',
         quantity: ''
     };
-    this.addItemToList = this.addItemToList.bind(this);
+    this.addItem = this.addItem.bind(this);
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleQuantityChange = this.handleQuantityChange.bind(this);
   }
@@ -25,8 +25,8 @@ class Form extends Component {
       });
   }
 
-  addItemToList() {
-    this.props.onAddItemToList(this.state);
+  addItem() {
+    this.props.onAddItem(this.state);
     this.setState({
         name: '',
         quantity: ''
@@ -46,7 +46,7 @@ class Form extends Component {
                 <input type="number" value={ this.state.quantity } onChange={ e => this.handleQuantityChange(e) } />
             </label>
             &nbsp;
-            <button onClick={ e => this.addItemToList() } >Add to list</button>
+            <button onClick={ e => this.addItem() } >Add to list</button>
         </div>
     );
   }
