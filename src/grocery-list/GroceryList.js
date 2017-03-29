@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './GroceryList.css';
 import List from '../list/List';
+import Form from '../form/Form';
 
 class GroceryList extends Component {
   constructor(props) {
@@ -12,8 +13,21 @@ class GroceryList extends Component {
           { id: '004', name: 'green bell pepper', quantity: 1, purchased: false }
       ]
     };
-    
+    this.handleAddItemToList = this.handleAddItemToList.bind(this);
     this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
+  }
+
+  handleAddItemToList(item) {
+    var id = this.state.groceries
+      .map(i => parseInt(i.id, 10))
+      .reduce((max, i) => { return max > i ? max : i; }, 0);
+    id = id.toString().split('').length >= 3 ? '' + (id + 1) : (id.toString().split('').length === 2 ? '0' + (id + 1) : '00' + (id + 1));
+    this.setState({
+      groceries: [
+        ...this.state.groceries,
+        Object.assign({ id: id, purchased: false }, item)
+      ]
+    })
   }
 
   handleCheckboxChange(item, value) {
@@ -35,6 +49,7 @@ class GroceryList extends Component {
   render() {
     return (
       <div className="grocery-list">
+        <Form onAddItemToList={ this.handleAddItemToList } />
         <List groceries={ this.state.groceries } onHandleCheckboxChange={ this.handleCheckboxChange }/>
       </div>
     );
