@@ -26,7 +26,6 @@ class Form extends Component {
   }
 
   addItemToList() {
-    console.log(this.state);
     this.props.onAddItemToList(this.state);
     this.setState({
         name: '',
