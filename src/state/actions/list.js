@@ -14,3 +14,11 @@ export const check = (item) => {
         item
     }
 };
+
+export const clear = () => {
+    console.log('clear checked items');
+    return {
+        type: 'clear',
+        item: null
+    }
+};

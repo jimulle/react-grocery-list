@@ -16,7 +16,7 @@ class GroceryList extends Component {
     return (
       <div className="grocery-list">
         <Form onAddItem={ this.props.actions.addItem } />
-        <List groceries={ this.props.list } onCheck={ this.props.actions.check }/>
+        <List groceries={ this.props.list } onCheck={ this.props.actions.check } onClear={ this.props.actions.clear } />
       </div>
     );
   }

@@ -8,7 +8,11 @@ export default(state = [], payload) => {
                     return Object.assign({}, item, { purchased: !item.purchased });
                 }
                 return item;
-            })
+            });
+        case 'clear':
+            return state.filter((item) => {
+                return !item.purchased;
+            });
         default:
             return state;
     }
