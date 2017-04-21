@@ -10,7 +10,7 @@ class FooterControls extends Component {
   render() {
     return (
         <div className="controls">
-            <button onClick={ e => this.removeCheckedItems() } >Remove Completed</button>
+            <button onClick={ e => this.removeCheckedItems() } >Remove All Completed</button>
         </div>
     );
   }

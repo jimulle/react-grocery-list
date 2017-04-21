@@ -23,10 +23,10 @@ export const clear = () => {
     }
 };
 
-export const removeChecked = () => {
+export const remove = (item) => {
     console.log('remove checked items');
     return {
         type: 'remove',
-        item: null
+        item
     }
 };

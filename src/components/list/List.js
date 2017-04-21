@@ -6,25 +6,32 @@ class List extends Component {
   constructor(props) {
     super(props);
     this.handleCheckboxChanged = this.handleCheckboxChanged.bind(this);
-    this.handleClearChecked = this.handleClearChecked.bind(this);
+    this.handleRemoveItem = this.handleRemoveItem.bind(this);
   }
 
   handleCheckboxChanged(item) {
     this.props.onCheck(item);
   }
 
-  handleClearChecked() {
-    this.props.onClear();
+  handleRemoveItem(item) {
+    this.props.onRemoveItem(item);
   }
 
   render() {
-    let listItems = this.props.groceries.map((item) => <ListItem item={ item } onCheck={ this.handleCheckboxChanged } key={ item.id } />);
+    let listItems = this.props.groceries.map(
+      (item) => 
+        (<ListItem
+          item={ item }
+          onCheck={ this.handleCheckboxChanged }
+          onRemove={ this.handleRemoveItem }
+          key={ item.id }
+        />)
+    );
     return (
       <div>
         <ul className="list">
             { listItems }
         </ul>
-        <button onClick={ () => this.handleClearChecked() } >Clear Checked</button>
       </div>
     );
   }
