@@ -10,6 +10,7 @@ export default(state = [], payload) => {
                 return item;
             });
         case 'clear':
+        case 'remove':
             return state.filter((item) => {
                 return !item.purchased;
             });

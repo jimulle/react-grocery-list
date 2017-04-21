@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './GroceryList.css';
 import List from '../list/List';
 import Form from '../form/Form';
+import FooterControls from '../footer-controls/FooterControls';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as listActions from '../../state/actions/list';
@@ -17,6 +18,7 @@ class GroceryList extends Component {
       <div className="grocery-list">
         <Form onAddItem={ this.props.actions.addItem } />
         <List groceries={ this.props.list } onCheck={ this.props.actions.check } onClear={ this.props.actions.clear } />
+        <FooterControls removeChecked={ this.props.actions.removeChecked } />
       </div>
     );
   }

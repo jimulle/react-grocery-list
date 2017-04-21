@@ -16,7 +16,7 @@ class ListItem extends Component {
       <li className="list-item">
         <input type="checkbox" checked={ this.props.item.purchased } onChange={ (event)=> this.handleItemCheckboxChange(event) } />
         &nbsp;
-        { this.props.item.name }
+        <span>{ this.props.item.name }</span>
         &nbsp;
         <span className="quantity">(x{ this.props.item.quantity })</span>
       </li>
